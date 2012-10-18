@@ -6,27 +6,29 @@ stable version of cgo. Needs to be run as sudo.
 
 Example:
 
-    package main
+```go
+package main
 
-    import (
-      "bcm2835"
-      "time"
-      "fmt"
-    )
+import (
+  "bcm2835"
+  "time"
+  "fmt"
+)
 
-    func main() {
-      err := bcm2835.Init() // Initialize the library
-      if err != nil {
-        fmt.Println(err)
-        return
-      }
-      defer bcm2835.Close() // Run close when returning
-      bcm2835.GpioFsel(bcm2835.Pin11, bcm2835.Output) // Set pin 11 to output
+func main() {
+  err := bcm2835.Init() // Initialize the library
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer bcm2835.Close() // Run close when returning
+  bcm2835.GpioFsel(bcm2835.Pin11, bcm2835.Output) // Set pin 11 to output
 
-      for { // Loop forever
-        bcm2835.GpioSet(bcm2835.Pin11) // Set pin 11 high
-        time.Sleep(500 * time.Millisecond)
-        bcm2835.GpioClr(bcm2835.Pin11) // Set pin 11 low
-        time.Sleep(500 * time.Millisecond)
-      }
-    }
+  for { // Loop forever
+    bcm2835.GpioSet(bcm2835.Pin11) // Set pin 11 high
+    time.Sleep(500 * time.Millisecond)
+    bcm2835.GpioClr(bcm2835.Pin11) // Set pin 11 low
+    time.Sleep(500 * time.Millisecond)
+  }
+}
+```
