@@ -63,12 +63,6 @@ func GpioFsel(pin, mode int) {
   C.bcm2835_gpio_fsel(C.uint8_t(pin), C.uint8_t(mode))
 }
 
-/*
-func Delay(millis uint) {
-  C.delay(C.uint(millis))
-}
-*/
-
 // GpioSet sets the specified pin output to high.
 func GpioSet(pin int) {
   C.bcm2835_gpio_set(C.uint8_t(pin))
@@ -156,12 +150,6 @@ func GpioPad(group int) uint32 {
 func GpioSetPad(group int, control uint32) {
   C.bcm2835_gpio_set_pad(C.uint8_t(group), C.uint32_t(control))
 }
-
-/*
-func DelayMicroseconds(micros uint) {
-  C.delayMicroseconds (C.uint(micros))
-}
-*/
 
 /// GpioWrite sets the output state of the specified pin
 func GpioWrite(pin, on int) {
