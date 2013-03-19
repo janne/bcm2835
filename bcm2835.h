@@ -346,24 +346,24 @@ extern volatile uint32_t *bcm2835_bsc1;
 /// Port function select modes for bcm2835_gpio_fsel()
 typedef enum
 {
-    BCM2835_GPIO_FSEL_INPT  = 0b000,   ///< Input
-    BCM2835_GPIO_FSEL_OUTP  = 0b001,   ///< Output
-    BCM2835_GPIO_FSEL_ALT0  = 0b100,   ///< Alternate function 0
-    BCM2835_GPIO_FSEL_ALT1  = 0b101,   ///< Alternate function 1
-    BCM2835_GPIO_FSEL_ALT2  = 0b110,   ///< Alternate function 2
-    BCM2835_GPIO_FSEL_ALT3  = 0b111,   ///< Alternate function 3
-    BCM2835_GPIO_FSEL_ALT4  = 0b011,   ///< Alternate function 4
-    BCM2835_GPIO_FSEL_ALT5  = 0b010,   ///< Alternate function 5
-    BCM2835_GPIO_FSEL_MASK  = 0b111    ///< Function select bits mask
+    BCM2835_GPIO_FSEL_INPT  = 0,   ///< Input
+    BCM2835_GPIO_FSEL_OUTP  = 1,   ///< Output
+    BCM2835_GPIO_FSEL_ALT0  = 4,   ///< Alternate function 0
+    BCM2835_GPIO_FSEL_ALT1  = 5,   ///< Alternate function 1
+    BCM2835_GPIO_FSEL_ALT2  = 6,   ///< Alternate function 2
+    BCM2835_GPIO_FSEL_ALT3  = 7,   ///< Alternate function 3
+    BCM2835_GPIO_FSEL_ALT4  = 3,   ///< Alternate function 4
+    BCM2835_GPIO_FSEL_ALT5  = 2,   ///< Alternate function 5
+    BCM2835_GPIO_FSEL_MASK  = 7    ///< Function select bits mask
 } bcm2835FunctionSelect;
 
 /// \brief bcm2835PUDControl
 /// Pullup/Pulldown defines for bcm2835_gpio_pud()
 typedef enum
 {
-    BCM2835_GPIO_PUD_OFF     = 0b00,   ///< Off ? disable pull-up/down
-    BCM2835_GPIO_PUD_DOWN    = 0b01,   ///< Enable Pull Down control
-    BCM2835_GPIO_PUD_UP      = 0b10    ///< Enable Pull Up control
+    BCM2835_GPIO_PUD_OFF     = 0,   ///< Off ? disable pull-up/down
+    BCM2835_GPIO_PUD_DOWN    = 1,   ///< Enable Pull Down control
+    BCM2835_GPIO_PUD_UP      = 2    ///< Enable Pull Up control
 } bcm2835PUDControl;
 
 /// Pad control register offsets from BCM2835_GPIO_PADS
