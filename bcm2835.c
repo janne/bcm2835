@@ -999,6 +999,7 @@ int bcm2835_close(void)
     unmapmem((void**) &bcm2835_bsc0, BCM2835_BLOCK_SIZE);
     unmapmem((void**) &bcm2835_bsc1, BCM2835_BLOCK_SIZE);
     unmapmem((void**) &bcm2835_st,   BCM2835_BLOCK_SIZE);
+    unmapmem((void**) &bcm2835_pads, BCM2835_BLOCK_SIZE);
     return 1; // Success
 }    
 

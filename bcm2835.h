@@ -22,8 +22,8 @@
 /// BCM 2835).
 ///
 /// The version of the package that this documentation refers to can be downloaded 
-/// from http://www.open.com.au/mikem/bcm2835/bcm2835-1.24.tar.gz
-/// You can find the latest version at http://www.open.com.au/mikem/bcm2835
+/// from http://www.airspayce.com/mikem/bcm2835/bcm2835-1.26.tar.gz
+/// You can find the latest version at http://www.airspayce.com/mikem/bcm2835
 ///
 /// Several example programs are provided.
 ///
@@ -226,7 +226,10 @@
 ///               to fix ocasional reads not completing. Patched by Mark Dootson.
 /// \version 1.24 Mark Dootson p[atched a problem with his previously submitted code
 ///               under high load from other processes. 
-/// \author  Mike McCauley (mikem@airspayce.com)
+/// \version 1.25 Updated author and distribution location details to airspayce.com
+/// \version 1.26 Added missing unmapmem for pads in bcm2835_close to prevent a memory leak. 
+///               Reported by Hartmut Henkel.
+/// \author  Mike McCauley (mikem@airspayce.com) DO NOT CONTACT THE AUTHOR DIRECTLY: USE THE LISTS
 
 
 
