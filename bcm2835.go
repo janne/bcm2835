@@ -4,6 +4,7 @@ package bcm2835
 // #include "bcm2835.h"
 import "C"
 import "errors"
+import "unsafe"
 
 const (
   Low = 0
@@ -192,12 +193,10 @@ func SpiTransfer(value int) int {
   return int(C.bcm2835_spi_transfer(C.uint8_t(value)))
 }
 
-/*
-func SpiTransfernb() {
-  C.bcm2835_spi_transfernb(char* tbuf, char* rbuf, uint32_t len)
+func SpiTransfern(data []byte) {
+  C.bcm2835_spi_transfern((*C.char)(unsafe.Pointer(&data[0])), C.uint32_t(len(data)))
 }
 
-func SpiTransfern() {
-  C.bcm2835_spi_transfern(char* buf, uint32_t len)
+func SpiTransfernb(dst []byte, data []byte) {
+  C.bcm2835_spi_transfernb((*C.char)(unsafe.Pointer(&data[0])), (*C.char)(unsafe.Pointer(&dst[0])), C.uint32_t(len(data)))
 }
-*/
